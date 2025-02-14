@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmpowHer - Women Empowerment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">EmpowHer</div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('skill_building') }}">Skill Building</a></li>
+            <li><a href="{{ url_for('businesses') }}">Businesses</a></li>
+            <li><a href="{{ url_for('mentorship') }}">Mentorship</a></li>
+            <li><a href="{{ url_for('leadership') }}">Leadership</a></li>
+            <li><a href="{{ url_for('wage_gap') }}">Wage Gap</a></li>
+            <li><a href="{{ url_for('legal_rights') }}">Legal Rights</a></li>
+            <li><a href="{{ url_for('abuse_reporting') }}">Abuse Reporting</a></li>
+            <li><a href="{{ url_for('feedback') }}">Feedback</a></li>
+            <li><a href="{{ url_for('wellness') }}">Wellness</a></li>
+            <li><a href="{{ url_for('blogs') }}">Blogs</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 EmpowHer. Empowering Women for a Better Future.</p>
+    </footer>
+
+</body>
+</html>

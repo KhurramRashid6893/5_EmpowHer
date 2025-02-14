@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Search Section -->
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search for wellness topics...">
+    <button onclick="searchGoogle()">Search Google</button>
+    <button onclick="searchYouTube()">Search YouTube</button>
+</div>
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <h1>Women’s Wellness & Self-Care</h1>
+    <p>Explore resources to enhance your mental and physical well-being.</p>
+    <a href="https://www.womenshealth.gov/" target="_blank" class="btn">Explore More</a>
+</div>
+
+<!-- Wellness Categories -->
+<div class="info-section">
+    <h2>Wellness & Self-Care</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Mindfulness & Meditation</h3>
+            <p>Guided meditation and relaxation techniques.</p>
+        </div>
+        <div class="card">
+            <h3>Nutrition & Fitness</h3>
+            <p>Healthy eating and workout plans for women.</p>
+        </div>
+        <div class="card">
+            <h3>Mental Health Support</h3>
+            <p>Find therapists, helplines, and community support.</p>
+        </div>
+        <div class="card">
+            <h3>Women’s Health Awareness</h3>
+            <p>Resources on reproductive health and well-being.</p>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Search -->
+<script>
+    function searchGoogle() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.google.com/search?q=${query}`, '_blank');
+        }
+    }
+
+    function searchYouTube() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.youtube.com/results?search_query=${query}`, '_blank');
+        }
+    }
+</script>
+
+{% endblock %}

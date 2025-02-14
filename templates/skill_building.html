@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Search Section -->
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search for skill-building topics...">
+    <button onclick="searchGoogle()">Search Google</button>
+    <button onclick="searchYouTube()">Search YouTube</button>
+</div>
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <h1>Skill Building for Women</h1>
+    <p>Enhance your abilities with free courses, mentorship, and career guidance.</p>
+    <a href="https://www.coursera.org/browse/personal-development" target="_blank" class="btn">Explore Courses</a>
+</div>
+
+<!-- Skill Development Categories -->
+<div class="info-section">
+    <h2>Explore Skill Categories</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3><a href="https://www.udemy.com/courses/business/entrepreneurship/" target="_blank">Entrepreneurship</a></h3>
+            <p>Start and grow your own business with expert-led guidance.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.codecademy.com/catalog/all" target="_blank">Tech & Coding</a></h3>
+            <p>Learn Python, Web Development, AI, and more.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.udemy.com/courses/design/" target="_blank">Design & Creativity</a></h3>
+            <p>Master graphic design, UX/UI, and creative arts.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.edx.org/course/soft-skills" target="_blank">Soft Skills</a></h3>
+            <p>Improve communication, leadership, and teamwork.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.masterclass.com/categories/career" target="_blank">Career Growth</a></h3>
+            <p>Develop professional skills and workplace confidence.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.skillshare.com/browse/finance" target="_blank">Financial Literacy</a></h3>
+            <p>Learn money management, investing, and budgeting.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Female-Centric Skills Section -->
+<div class="female-skills-section">
+    <h2>Women-Centric Skills</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3><a href="https://www.skillshare.com/en/browse/painting" target="_blank">Painting & Art</a></h3>
+            <p>Enhance your creativity with professional painting and sketching courses.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.craftsy.com/class/sewing-and-stitching-101/" target="_blank">Stitching & Sewing</a></h3>
+            <p>Learn sewing, embroidery, and DIY clothing design.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.udemy.com/course/fashion-design-course/" target="_blank">Fashion Designing</a></h3>
+            <p>Master fashion trends, styling, and garment creation.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.skillshare.com/en/browse/makeup" target="_blank">Makeup & Beauty</a></h3>
+            <p>Become a professional makeup artist with industry techniques.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.udemy.com/course/jewelry-making/" target="_blank">Jewelry Making</a></h3>
+            <p>Design unique and creative jewelry for personal or business use.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.skillshare.com/en/browse/home-decor" target="_blank">Home Décor & Interior</a></h3>
+            <p>Learn to create stunning home spaces with interior design skills.</p>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Search Functionality -->
+<script>
+    function searchGoogle() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.google.com/search?q=${query}`, '_blank');
+        }
+    }
+
+    function searchYouTube() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.youtube.com/results?search_query=${query}`, '_blank');
+        }
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Search Section -->
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search for women empowerment blogs...">
+    <button onclick="searchGoogle()">Search Google</button>
+    <button onclick="searchYouTube()">Search YouTube</button>
+</div>
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <h1>EmpowHer Blog</h1>
+    <p>Read inspiring stories, insights, and research on gender equality and women’s empowerment.</p>
+    <a href="https://www.unwomen.org/en/news-stories" target="_blank" class="btn">Explore More Blogs</a>
+</div>
+
+<!-- Blog Categories -->
+<div class="info-section">
+    <h2>Featured Blogs</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3><a href="https://leanin.org/stories" target="_blank">Success Stories</a></h3>
+            <p>Read about women who have broken barriers and achieved success.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.aauw.org/resources/research/" target="_blank">Research & Reports</a></h3>
+            <p>Explore studies on gender equality, wage gap, and workplace inclusion.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.womenwhocode.com/blog" target="_blank">Tech & Innovation</a></h3>
+            <p>Stay updated with blogs on women in technology and leadership.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.forbes.com/sites/womensmedia/" target="_blank">Women in Business</a></h3>
+            <p>Read about female entrepreneurs and corporate leaders.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.unwomen.org/en/news-stories/feature-story" target="_blank">Activism & Policy</a></h3>
+            <p>Get insights into movements driving policy changes for women’s rights.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.theguardian.com/lifeandstyle/women" target="_blank">Health & Well-being</a></h3>
+            <p>Discover resources on mental health, self-care, and wellness.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Comment Section -->
+<div class="comment-section">
+    <h2>Leave a Comment</h2>
+    <textarea id="comment-box" placeholder="Write your thoughts..."></textarea>
+    <button onclick="postComment()">Post Comment</button>
+    <div id="comments-container"></div>
+</div>
+
+<!-- JavaScript for Search & Comments -->
+<script>
+    function searchGoogle() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.google.com/search?q=${query}`, '_blank');
+        }
+    }
+
+    function searchYouTube() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.youtube.com/results?search_query=${query}`, '_blank');
+        }
+    }
+
+    // Comment Section Logic
+    function postComment() {
+        let commentText = document.getElementById("comment-box").value;
+        if (commentText.trim() !== "") {
+            let commentDiv = document.createElement("div");
+            commentDiv.classList.add("comment");
+            commentDiv.innerHTML = `<p>${commentText}</p>`;
+            document.getElementById("comments-container").appendChild(commentDiv);
+            document.getElementById("comment-box").value = "";
+        }
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Search Section -->
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search for women-led business opportunities...">
+    <button onclick="searchGoogle()">Search Google</button>
+    <button onclick="searchYouTube()">Search YouTube</button>
+</div>
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <h1>Empowering Women Entrepreneurs</h1>
+    <p>Explore resources, funding, and networking opportunities for women-led businesses.</p>
+    <a href="https://www.goldmansachs.com/what-we-do/investing-and-lending/launch-with-gs/" target="_blank" class="btn">Apply for Business Funding</a>
+</div>
+
+<!-- Business Opportunities -->
+<div class="info-section">
+    <h2>Women-Led Business Resources</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3><a href="https://ifundwomen.com/" target="_blank">Funding & Grants</a></h3>
+            <p>Find grants and funding programs for women entrepreneurs.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.womeninbusiness.org/" target="_blank">Women-Owned Business Directory</a></h3>
+            <p>Discover and support female-led businesses globally.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.f6s.com/programs/women-entrepreneurs" target="_blank">Startup Incubators</a></h3>
+            <p>Accelerate your business with incubators for women-led startups.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.sba.gov/business-guide/grow-your-business/women-owned-businesses" target="_blank">Government Support</a></h3>
+            <p>Learn about government policies supporting women-owned businesses.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.ellevatenetwork.com/" target="_blank">Business Networking</a></h3>
+            <p>Connect with successful women entrepreneurs and investors.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.shopify.com/women" target="_blank">E-commerce & Online Stores</a></h3>
+            <p>Set up your online store and grow your business.</p>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Search Functionality -->
+<script>
+    function searchGoogle() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.google.com/search?q=${query}`, '_blank');
+        }
+    }
+
+    function searchYouTube() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.youtube.com/results?search_query=${query}`, '_blank');
+        }
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Search Section -->
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search for topics...">
+    <button onclick="searchGoogle()">Search Google</button>
+    <button onclick="searchYouTube()">Search YouTube</button>
+</div>
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <h1>EmpowHer - Empowering Women Worldwide</h1>
+    <p>Join the movement for gender equality and women's empowerment.</p>
+    <a href="{{ url_for('skill_building') }}" class="btn">Explore Opportunities</a>
+</div>
+
+<!-- Information Section -->
+<div class="info-section">
+    <h2>Our Mission</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3><a href="{{ url_for('skill_building') }}">Gender Equality</a></h3>
+            <p>We work towards breaking barriers and ensuring equal opportunities.</p>
+        </div>
+        <div class="card">
+            <h3><a href="{{ url_for('skill_building') }}">Skill Development</a></h3>
+            <p>Providing women with access to education, resources, and mentorship.</p>
+        </div>
+        <div class="card">
+            <h3><a href="{{ url_for('legal_rights') }}">Legal Rights</a></h3>
+            <p>Raising awareness about women’s rights and protections.</p>
+        </div>
+        <div class="card">
+            <h3><a href="{{ url_for('feedback') }}">Workplace Safety</a></h3>
+            <p>Ensuring a safe and inclusive environment for women at work.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Impact Statistics -->
+<div class="stats-section">
+    <h2>Impact Statistics</h2>
+    <div class="stats-container">
+        <div class="stat">
+            <h3>100K+</h3>
+            <p>Women Empowered</p>
+        </div>
+        <div class="stat">
+            <h3>500+</h3>
+            <p>Skill Development Programs</p>
+        </div>
+        <div class="stat">
+            <h3>80%</h3>
+            <p>Increase in Leadership Participation</p>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Search Functionality -->
+<script>
+    function searchGoogle() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.google.com/search?q=${query}`, '_blank');
+        }
+    }
+
+    function searchYouTube() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.youtube.com/results?search_query=${query}`, '_blank');
+        }
+    }
+</script>
+
+{% endblock %}

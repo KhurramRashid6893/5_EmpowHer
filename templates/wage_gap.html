@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Search Section -->
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search for wage gap resources...">
+    <button onclick="searchGoogle()">Search Google</button>
+    <button onclick="searchYouTube()">Search YouTube</button>
+</div>
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <h1>Understanding the Gender Wage Gap</h1>
+    <p>Discover insights, statistics, and tools to advocate for equal pay.</p>
+    <a href="https://www.equalpaytoday.org/" target="_blank" class="btn">Learn More</a>
+</div>
+
+<!-- Wage Gap Categories -->
+<div class="info-section">
+    <h2>Wage Gap Insights</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3><a href="https://www.epi.org/publication/what-is-the-gender-pay-gap-and-is-it-real/" target="_blank">What is the Wage Gap?</a></h3>
+            <p>Understand why wage disparities exist between men and women.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.weforum.org/reports/global-gender-gap-report-2023" target="_blank">Global Wage Reports</a></h3>
+            <p>Explore the latest reports on gender-based salary gaps.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.payscale.com/gender-pay-gap" target="_blank">Wage Gap by Industry</a></h3>
+            <p>Find salary comparisons across different job sectors.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.unwomen.org/en/news/stories/2022/3/explainer-what-you-should-know-about-the-gender-pay-gap" target="_blank">Legal Protections</a></h3>
+            <p>Learn about laws protecting women from salary discrimination.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.aauw.org/resources/research/simple-truth/" target="_blank">Salary Negotiation Tips</a></h3>
+            <p>Gain confidence in negotiating fair pay.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://gender-pay-gap.service.gov.uk/" target="_blank">Country-wise Salary Data</a></h3>
+            <p>Check wage gap statistics for your country.</p>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Search Functionality -->
+<script>
+    function searchGoogle() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.google.com/search?q=${query}`, '_blank');
+        }
+    }
+
+    function searchYouTube() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.youtube.com/results?search_query=${query}`, '_blank');
+        }
+    }
+</script>
+
+{% endblock %}

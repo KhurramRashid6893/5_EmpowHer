@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Search Section -->
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search for women leadership topics...">
+    <button onclick="searchGoogle()">Search Google</button>
+    <button onclick="searchYouTube()">Search YouTube</button>
+</div>
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <h1>Empowering Women in Leadership</h1>
+    <p>Breaking barriers and building the next generation of female leaders.</p>
+    <a href="https://leanin.org/women-in-leadership" target="_blank" class="btn">Join a Leadership Circle</a>
+</div>
+
+<!-- Leadership Opportunities -->
+<div class="info-section">
+    <h2>Women’s Leadership Resources</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3><a href="https://www.forbes.com/top-women-leaders/" target="_blank">Inspiring Women Leaders</a></h3>
+            <p>Read about influential women leading industries globally.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.womenonboards.net/" target="_blank">Board Membership Programs</a></h3>
+            <p>Discover programs that help women get into board positions.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.girlsintech.org/" target="_blank">Tech Leadership for Women</a></h3>
+            <p>Explore programs supporting women in tech leadership.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.hbr.org/topic/women-leadership" target="_blank">Leadership Development</a></h3>
+            <p>Resources on how to develop leadership skills.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.ellevatenetwork.com/" target="_blank">Networking for Leaders</a></h3>
+            <p>Join global communities for professional networking.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.catalyst.org/research/women-in-leadership/" target="_blank">Women in Leadership Statistics</a></h3>
+            <p>Explore data on gender representation in leadership.</p>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Search Functionality -->
+<script>
+    function searchGoogle() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.google.com/search?q=${query}`, '_blank');
+        }
+    }
+
+    function searchYouTube() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.youtube.com/results?search_query=${query}`, '_blank');
+        }
+    }
+</script>
+
+{% endblock %}

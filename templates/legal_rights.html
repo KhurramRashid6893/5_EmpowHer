@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Search Section -->
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search for legal rights resources...">
+    <button onclick="searchGoogle()">Search Google</button>
+    <button onclick="searchYouTube()">Search YouTube</button>
+</div>
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <h1>Know Your Legal Rights</h1>
+    <p>Empowering women with knowledge of their legal protections and rights.</p>
+    <a href="https://www.unwomen.org/en/what-we-do/leadership-and-political-participation/laws-and-policies" target="_blank" class="btn">Explore Women’s Laws</a>
+</div>
+
+<!-- Legal Rights Categories -->
+<div class="info-section">
+    <h2>Important Legal Protections</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3><a href="https://www.un.org/en/global-issues/women" target="_blank">Gender Equality Laws</a></h3>
+            <p>Learn about international laws promoting gender equality.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.unwomen.org/en/what-we-do/ending-violence-against-women" target="_blank">Protection Against Violence</a></h3>
+            <p>Understand laws against domestic violence, harassment, and abuse.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.ilo.org/gender/areasofwork/WCMS_546340/lang--en/index.htm" target="_blank">Workplace Rights</a></h3>
+            <p>Know your legal rights related to fair pay, maternity leave, and harassment.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.amnesty.org/en/what-we-do/discrimination/" target="_blank">Protection Against Discrimination</a></h3>
+            <p>Laws that safeguard women from discrimination in society and employment.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.unwomen.org/en/what-we-do/economic-empowerment" target="_blank">Property & Inheritance Rights</a></h3>
+            <p>Know your rights to own, inherit, and control property legally.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.unfpa.org/sexual-and-reproductive-health" target="_blank">Reproductive & Healthcare Rights</a></h3>
+            <p>Laws ensuring access to healthcare, contraception, and reproductive choices.</p>
+        </div>
+    </div>
+</div>
+
+<!-- International & National Legal Resources -->
+<div class="legal-resources-section">
+    <h2>Legal Assistance & Resources</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3><a href="https://www.ohchr.org/en/issues/women/pages/womenindex.aspx" target="_blank">United Nations Human Rights</a></h3>
+            <p>International human rights laws for women’s protection.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.womenonwaves.org/" target="_blank">Women on Waves</a></h3>
+            <p>Legal help and medical aid for women globally.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.nwlc.org/" target="_blank">National Women's Law Center (USA)</a></h3>
+            <p>Legal advocacy and support for women’s rights in the USA.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.lawyerscollective.org/" target="_blank">Lawyers Collective (India)</a></h3>
+            <p>Legal support for women in India fighting for justice.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.womenslegalcentre.org.za/" target="_blank">Women’s Legal Centre (South Africa)</a></h3>
+            <p>Legal assistance for women in South Africa.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.legalaid.nsw.gov.au/" target="_blank">Legal Aid NSW (Australia)</a></h3>
+            <p>Legal advice and aid for women in Australia.</p>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Search Functionality -->
+<script>
+    function searchGoogle() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.google.com/search?q=${query}`, '_blank');
+        }
+    }
+
+    function searchYouTube() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.youtube.com/results?search_query=${query}`, '_blank');
+        }
+    }
+</script>
+
+{% endblock %}

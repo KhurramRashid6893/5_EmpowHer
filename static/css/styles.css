@@ -1,0 +1,872 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background: #ff4081;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Search Section */
+.search-container {
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-container input {
+    width: 60%;
+    padding: 10px;
+    border: 2px solid #ff4081;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 10px 15px;
+    background: #ff4081;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-container button:hover {
+    background: #d6336c;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: #fff;
+}
+
+.hero-section h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: #fff;
+    color: #ff4081;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ff4081;
+    color: #fff;
+}
+
+/* Card Section */
+.card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 a {
+    text-decoration: none;
+    color: #ff4081;
+    transition: 0.3s;
+}
+
+.card h3 a:hover {
+    color: #d6336c;
+}
+
+/* Stats Section */
+.stats-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: #ffdfdb;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    font-size: 24px;
+    font-weight: bold;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.stat:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #ff4081;
+    color: #fff;
+}
+
+
+/*Skill building */
+/* Search Section */
+.search-container {
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-container input {
+    width: 60%;
+    padding: 10px;
+    border: 2px solid #ff4081;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 10px 15px;
+    background: #ff4081;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-container button:hover {
+    background: #d6336c;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: #fff;
+}
+
+.hero-section h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Card Section */
+.card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 a {
+    text-decoration: none;
+    color: #ff4081;
+    transition: 0.3s;
+}
+
+.card h3 a:hover {
+    color: #d6336c;
+}
+
+/* Female-Centric Skills Section */
+.female-skills-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: #ffdfdb;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #ff4081;
+    color: #fff;
+}
+
+/* Abuse reporting */
+
+/* Search Section */
+.search-container {
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-container input {
+    width: 60%;
+    padding: 10px;
+    border: 2px solid #ff4081;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 10px 15px;
+    background: #ff4081;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-container button:hover {
+    background: #d6336c;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: #fff;
+}
+
+/* Card Section */
+.card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Safety Features Section */
+.safety-features-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: #ffdfdb;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #ff4081;
+    color: #fff;
+}
+
+/*mentorship*/
+
+/* Search Section */
+.search-container {
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-container input {
+    width: 60%;
+    padding: 10px;
+    border: 2px solid #ff4081;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 10px 15px;
+    background: #ff4081;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-container button:hover {
+    background: #d6336c;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: #fff;
+}
+
+/* Card Section */
+.card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 a {
+    text-decoration: none;
+    color: #ff4081;
+    transition: 0.3s;
+}
+
+.card h3 a:hover {
+    color: #d6336c;
+}
+
+/* Mentorship Resources Section */
+.mentorship-resources-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: #ffdfdb;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #ff4081;
+    color: #fff;
+}
+
+/*legal rights */
+
+/* Search Section */
+.search-container {
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-container input {
+    width: 60%;
+    padding: 10px;
+    border: 2px solid #ff4081;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 10px 15px;
+    background: #ff4081;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-container button:hover {
+    background: #d6336c;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: #fff;
+}
+
+/* Card Section */
+.card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 a {
+    text-decoration: none;
+    color: #ff4081;
+    transition: 0.3s;
+}
+
+.card h3 a:hover {
+    color: #d6336c;
+}
+
+/* Legal Resources Section */
+.legal-resources-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: #ffdfdb;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #ff4081;
+    color: #fff;
+}
+
+/* Leadership*/
+/* Leadership Section */
+.leadership-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: #ffdfdb;
+}
+/* Floating Widget Styles */
+.floating-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 250px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.floating-widget img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.floating-widget h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.floating-widget p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* business section */
+/* Search Section */
+.search-container {
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-container input {
+    width: 60%;
+    padding: 10px;
+    border: 2px solid #ff4081;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 10px 15px;
+    background: #ff4081;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-container button:hover {
+    background: #d6336c;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: #fff;
+}
+
+/* Card Section */
+.card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 a {
+    text-decoration: none;
+    color: #ff4081;
+    transition: 0.3s;
+}
+
+.card h3 a:hover {
+    color: #d6336c;
+}
+
+/* Business Section */
+.business-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: #ffdfdb;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #ff4081;
+    color: #fff;
+}
+
+/* Blogs */
+
+/* Search Section */
+.search-container {
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-container input {
+    width: 60%;
+    padding: 10px;
+    border: 2px solid #ff4081;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 10px 15px;
+    background: #ff4081;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-container button:hover {
+    background: #d6336c;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: #fff;
+}
+
+/* Card Section */
+.card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 a {
+    text-decoration: none;
+    color: #ff4081;
+    transition: 0.3s;
+}
+
+.card h3 a:hover {
+    color: #d6336c;
+}
+
+/* Comment Section */
+.comment-section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.comment-section textarea {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+.comment-section button {
+    padding: 10px 15px;
+    background: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.comment-section button:hover {
+    background: #d6336c;
+}
+
+/* Display Comments */
+#comments-container {
+    margin-top: 20px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comment {
+    background: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Feedback */
+
+/* Feedback Form */
+.feedback-form {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.feedback-form textarea {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+.feedback-form button {
+    padding: 10px 15px;
+    background: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.feedback-form button:hover {
+    background: #d6336c;
+}
+
+/* Display Feedback */
+#feedback-container {
+    margin-top: 20px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feedback {
+    background: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/*Wellness*/
+
+/* Wellness Section */
+.wellness-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: #ffdfdb;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: #fff;
+}

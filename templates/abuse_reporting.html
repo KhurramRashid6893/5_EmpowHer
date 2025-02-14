@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Search Section -->
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search for abuse reporting resources...">
+    <button onclick="searchGoogle()">Search Google</button>
+    <button onclick="searchYouTube()">Search YouTube</button>
+</div>
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <h1>Report Abuse & Seek Help</h1>
+    <p>Your safety matters. Access resources, report abuse, and find support.</p>
+    <a href="https://www.unwomen.org/en/what-we-do/ending-violence-against-women" target="_blank" class="btn">Learn More</a>
+</div>
+
+<!-- Key Features -->
+<div class="info-section">
+    <h2>Report & Seek Assistance</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3><a href="https://www.who.int/news-room/fact-sheets/detail/violence-against-women" target="_blank">Understanding Abuse</a></h3>
+            <p>Learn about different types of abuse and their impact on victims.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://evaw-global-database.unwomen.org/en" target="_blank">Legal Resources</a></h3>
+            <p>Explore international laws and legal rights for abuse survivors.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.rainn.org/" target="_blank">Anonymous Reporting</a></h3>
+            <p>Report abuse safely and anonymously through secure platforms.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://hotline.org/" target="_blank">Emergency Contacts</a></h3>
+            <p>Find immediate help and emergency numbers globally.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.womenagainstabuse.org/safety-planning" target="_blank">Safety Planning</a></h3>
+            <p>Get tips on creating a safety plan if you are in danger.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.metoomvmt.org/" target="_blank">Support Communities</a></h3>
+            <p>Join survivor networks and support groups for recovery.</p>
+        </div>
+    </div>
+</div>
+
+<!-- National & International Helplines -->
+<div class="helpline-section">
+    <h2>National & International Helplines</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>🇮🇳 India</h3>
+            <p><strong>Women Helpline:</strong> 1091</p>
+            <p><strong>Domestic Abuse:</strong> 181</p>
+            <p><strong>Police:</strong> 100</p>
+        </div>
+        <div class="card">
+            <h3>🇺🇸 USA</h3>
+            <p><strong>National Domestic Violence Hotline:</strong> 1-800-799-7233</p>
+            <p><strong>Rape Crisis Hotline:</strong> 1-800-656-4673</p>
+        </div>
+        <div class="card">
+            <h3>🇬🇧 UK</h3>
+            <p><strong>National Domestic Abuse Helpline:</strong> 0808 2000 247</p>
+            <p><strong>Rape Crisis Helpline:</strong> 0808 802 9999</p>
+        </div>
+        <div class="card">
+            <h3>🌍 International</h3>
+            <p><strong>UN Women Help:</strong> <a href="https://www.unwomen.org/en" target="_blank">Visit Website</a></p>
+            <p><strong>World Health Organization:</strong> <a href="https://www.who.int" target="_blank">Visit Website</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Additional Safety Features -->
+<div class="safety-features-section">
+    <h2>Additional Safety Features</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3><a href="https://www.circleof6app.com/" target="_blank">Emergency Alert Apps</a></h3>
+            <p>Download apps to send instant alerts to trusted contacts.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://support.google.com/android/answer/9387483?hl=en" target="_blank">Live Location Sharing</a></h3>
+            <p>Share real-time location with friends or family for safety.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.who.int/publications/i/item/violence-against-women-prevalence-estimates" target="_blank">Global Reports on Abuse</a></h3>
+            <p>Stay updated with the latest research on gender-based violence.</p>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Search Functionality -->
+<script>
+    function searchGoogle() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.google.com/search?q=${query}`, '_blank');
+        }
+    }
+
+    function searchYouTube() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.youtube.com/results?search_query=${query}`, '_blank');
+        }
+    }
+</script>
+
+{% endblock %}

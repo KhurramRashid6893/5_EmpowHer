@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Search Section -->
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search for mentorship opportunities...">
+    <button onclick="searchGoogle()">Search Google</button>
+    <button onclick="searchYouTube()">Search YouTube</button>
+</div>
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <h1>Mentorship Programs for Women</h1>
+    <p>Connect with experienced mentors to accelerate your career and personal growth.</p>
+    <a href="https://www.globalmentoring.org/" target="_blank" class="btn">Find a Mentor</a>
+</div>
+
+<!-- Mentorship Categories -->
+<div class="info-section">
+    <h2>Types of Mentorship</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3><a href="https://leanin.org/circles" target="_blank">Career Guidance</a></h3>
+            <p>Get career advice from industry experts and leaders.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.womenwhocode.com/mentorship" target="_blank">Tech Mentorship</a></h3>
+            <p>Learn from women in tech and get coding support.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.score.org/women-entrepreneurs" target="_blank">Entrepreneurial Mentorship</a></h3>
+            <p>Start and scale your business with expert guidance.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.shementors.com.au/" target="_blank">Leadership Development</a></h3>
+            <p>Advance in leadership roles with mentor support.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.womeninresearch.org/mentorship" target="_blank">Research & Academic Mentorship</a></h3>
+            <p>Receive support for academic research and studies.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.womenssportsfoundation.org/" target="_blank">Sports & Fitness Mentorship</a></h3>
+            <p>Train and excel in sports with experienced athletes.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Additional Mentorship Resources -->
+<div class="mentorship-resources-section">
+    <h2>Important Mentorship Resources</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3><a href="https://mentoringher.com/" target="_blank">MentoringHer</a></h3>
+            <p>Global mentorship platform for professional women.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.womeninmentoring.com/" target="_blank">Women in Mentoring</a></h3>
+            <p>Mentorship opportunities for young and aspiring women.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.forbes.com/sites/jennifercohen/2018/07/05/how-to-find-a-mentor-and-make-the-relationship-work/" target="_blank">How to Find a Mentor</a></h3>
+            <p>Forbes guide on mentorship and professional growth.</p>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.womenwhowin100.com/" target="_blank">Women Who Win</a></h3>
+            <p>Empowerment network connecting women with mentors.</p>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Search Functionality -->
+<script>
+    function searchGoogle() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.google.com/search?q=${query}`, '_blank');
+        }
+    }
+
+    function searchYouTube() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.youtube.com/results?search_query=${query}`, '_blank');
+        }
+    }
+</script>
+
+{% endblock %}

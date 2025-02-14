@@ -1,0 +1,128 @@
+[
+    {
+        "name": "Malala Yousafzai",
+        "field": "Education Activist",
+        "quote": "One child, one teacher, one book, and one pen can change the world.",
+        "image": "path_to_malala_image.jpg"
+    },
+    {
+        "name": "Michelle Obama",
+        "field": "Former First Lady, Lawyer",
+        "quote": "Success isn't about how much money you make; it's about the difference you make in people's lives.",
+        "image": "path_to_michelle_obama.jpg"
+    },
+    {
+        "name": "Sheryl Sandberg",
+        "field": "COO of Meta, Author",
+        "quote": "Leadership is about making others better as a result of your presence.",
+        "image": "path_to_sheryl_sandberg.jpg"
+    },
+    {
+        "name": "Kamala Harris",
+        "field": "Vice President of the USA",
+        "quote": "My mother would tell me—Kamala, you may be the first to do many things, but make sure you’re not the last.",
+        "image": "path_to_kamala_harris.jpg"
+    },
+    {
+        "name": "Angela Merkel",
+        "field": "Former Chancellor of Germany",
+        "quote": "Look at the world—there is always something you can do.",
+        "image": "path_to_angela_merkel.jpg"
+    },
+    {
+        "name": "Serena Williams",
+        "field": "Tennis Champion",
+        "quote": "Every woman's success should be an inspiration to another. We’re strongest when we cheer each other on.",
+        "image": "path_to_serena_williams.jpg"
+    },
+    {
+        "name": "Oprah Winfrey",
+        "field": "Media Mogul",
+        "quote": "Think like a queen. A queen is not afraid to fail. Failure is another stepping stone to greatness.",
+        "image": "path_to_oprah_winfrey.jpg"
+    },
+    {
+        "name": "Marie Curie",
+        "field": "Scientist, Nobel Laureate",
+        "quote": "Nothing in life is to be feared; it is only to be understood.",
+        "image": "path_to_marie_curie.jpg"
+    },
+    {
+        "name": "Ruth Bader Ginsburg",
+        "field": "Supreme Court Justice",
+        "quote": "Fight for the things that you care about, but do it in a way that will lead others to join you.",
+        "image": "path_to_ruth_bader_ginsburg.jpg"
+    },
+    {
+        "name": "Greta Thunberg",
+        "field": "Climate Activist",
+        "quote": "You are never too small to make a difference.",
+        "image": "path_to_greta_thunberg.jpg"
+    },
+    {
+        "name": "Jacinda Ardern",
+        "field": "Former Prime Minister of New Zealand",
+        "quote": "One of the criticisms I’ve faced is that I’m not aggressive or assertive enough, but we need to change that.",
+        "image": "path_to_jacinda_ardern.jpg"
+    },
+    {
+        "name": "Indira Gandhi",
+        "field": "Former Prime Minister of India",
+        "quote": "The power to question is the basis of all human progress.",
+        "image": "path_to_indira_gandhi.jpg"
+    },
+    {
+        "name": "Katherine Johnson",
+        "field": "NASA Mathematician",
+        "quote": "Girls are capable of doing everything men are capable of doing.",
+        "image": "path_to_katherine_johnson.jpg"
+    },
+    {
+        "name": "Ava DuVernay",
+        "field": "Filmmaker",
+        "quote": "If your dream only includes you, it's too small.",
+        "image": "path_to_ava_duvernay.jpg"
+    },
+    {
+        "name": "Melinda Gates",
+        "field": "Philanthropist",
+        "quote": "A woman with a voice is by definition a strong woman.",
+        "image": "path_to_melinda_gates.jpg"
+    },
+    {
+        "name": "Emma Watson",
+        "field": "Actress & Activist",
+        "quote": "If not me, who? If not now, when?",
+        "image": "path_to_emma_watson.jpg"
+    },
+    {
+        "name": "Wangari Maathai",
+        "field": "Environmental Activist",
+        "quote": "It's the little things citizens do. That's what will make the difference.",
+        "image": "path_to_wangari_maathai.jpg"
+    },
+    {
+        "name": "Maya Angelou",
+        "field": "Poet & Author",
+        "quote": "Nothing can dim the light that shines from within.",
+        "image": "path_to_maya_angelou.jpg"
+    },
+    {
+        "name": "Malcolm X’s Mother - Louise Little",
+        "field": "Activist",
+        "quote": "A person who stands for nothing will fall for anything.",
+        "image": "path_to_louise_little.jpg"
+    },
+    {
+        "name": "Hellen Keller",
+        "field": "Author & Disability Rights Activist",
+        "quote": "The only thing worse than being blind is having sight but no vision.",
+        "image": "path_to_helen_keller.jpg"
+    },
+    {
+        "name": "Coco Chanel",
+        "field": "Fashion Designer",
+        "quote": "A girl should be two things: who and what she wants.",
+        "image": "path_to_coco_chanel.jpg"
+    }
+]
