@@ -591,6 +591,29 @@ footer {
 }
 
 /* business section */
+.idea-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff3f6;
+    border: 2px dashed #ff4081;
+    border-radius: 10px;
+    color: #333;
+    font-size: 16px;
+    white-space: pre-wrap;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.business-section textarea {
+    width: 70%;
+    padding: 10px;
+    border: 2px solid #ff4081;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
 /* Search Section */
 .search-container {
     text-align: center;

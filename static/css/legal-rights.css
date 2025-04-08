@@ -1,0 +1,22 @@
+/* Styles specific to the Legal Rights page */
+
+.legal-container {
+    padding: 20px;
+    background-color: #fafafa;
+}
+
+.legal-section {
+    margin-bottom: 25px;
+    padding: 15px;
+    border-left: 4px solid #d35400;
+    background-color: #ffffff;
+}
+
+.legal-section h3 {
+    color: #d35400;
+}
+
+.legal-section p {
+    font-size: 16px;
+    line-height: 1.6;
+}

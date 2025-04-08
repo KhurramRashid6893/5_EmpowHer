@@ -1,0 +1,18 @@
+/* Styles specific to the Wellness page */
+
+.wellness-container {
+    padding: 20px;
+    background-color: #f5fff5;
+}
+
+.wellness-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    border-left: 4px solid #2ecc71;
+}
+
+.wellness-card h4 {
+    color: #2ecc71;
+}

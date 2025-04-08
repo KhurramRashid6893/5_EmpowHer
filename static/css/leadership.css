@@ -1,0 +1,151 @@
+/* ===============================
+   Leadership Section
+   =============================== */
+   .leadership-section {
+    padding: 60px 20px;
+    background-color: #fff0f5;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.leadership-section h2 {
+    font-size: 36px;
+    color: #d6336c;
+    margin-bottom: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Card Container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual Cards */
+.card {
+    background: #ffffff;
+    padding: 30px 20px;
+    width: 280px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Image styling */
+.card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #ff99ac;
+}
+
+/* Name */
+.card h3 {
+    font-size: 20px;
+    color: #ff4081;
+    margin: 10px 0 5px;
+    font-weight: 600;
+}
+
+/* Role / Description */
+.card p {
+    font-size: 14px;
+    color: #444;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ===============================
+   Video Carousel Section
+   =============================== */
+.video-carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+    background: #fff0f5;
+    padding: 40px 0;
+    position: relative;
+}
+
+.video-carousel-wrapper h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #d6336c;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.video-carousel {
+    display: flex;
+    gap: 20px;
+    animation: scrollLeft 60s linear infinite;
+    width: max-content;
+}
+
+.video-card {
+    flex: none;
+    width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+}
+
+.video-card iframe {
+    width: 100%;
+    height: 180px;
+    border: none;
+}
+
+.video-card p {
+    padding: 10px;
+    font-weight: 600;
+    color: #d6336c;
+}
+
+/* Carousel Animation */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ===============================
+   Responsive Styling
+   =============================== */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-carousel {
+        animation: none;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .video-card {
+        flex: 0 0 auto;
+    }
+}

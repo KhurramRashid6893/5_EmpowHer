@@ -1,0 +1,144 @@
+/* mentorship.css */
+
+/* Search Section */
+.search-container {
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-container input {
+    width: 60%;
+    padding: 10px;
+    border: 2px solid #ff4081;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 10px 15px;
+    background: #ff4081;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-container button:hover {
+    background: #d6336c;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: #fff;
+}
+
+/* Card Section */
+.card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 a {
+    text-decoration: none;
+    color: #ff4081;
+    transition: 0.3s;
+}
+
+.card h3 a:hover {
+    color: #d6336c;
+}
+
+/* Mentorship Resources Section */
+.mentorship-resources-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: #ffdfdb;
+}
+
+/* AI Mentor Section */
+.features-container {
+    margin: 30px auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.features-container select,
+.features-container textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #ff4081;
+    margin-top: 8px;
+    font-size: 15px;
+    resize: none;
+}
+
+.features-container button {
+    background-color: #ff4081;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.features-container button:hover {
+    background-color: #d6336c;
+}
+
+#ai-response {
+    margin-top: 10px;
+    padding: 10px;
+    background: #fff1f3;
+    border-left: 4px solid #ff4081;
+    border-radius: 5px;
+    font-style: italic;
+    white-space: pre-line;
+}
+
+#human-mentor-msg {
+    font-size: 16px;
+    color: #444;
+    padding: 10px 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #ff4081;
+    color: #fff;
+}
