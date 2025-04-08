@@ -1,7 +1,8 @@
+
 {% extends 'base.html' %}
 
 {% block content %}
-
+<link rel="stylesheet" href="{{ url_for('static', filename='css/skill_building.css') }}">
 <!-- Search Section -->
 <div class="search-container">
     <input type="text" id="search-input" placeholder="Search for skill-building topics...">
@@ -15,6 +16,43 @@
     <p>Enhance your abilities with free courses, mentorship, and career guidance.</p>
     <a href="https://www.coursera.org/browse/personal-development" target="_blank" class="btn">Explore Courses</a>
 </div>
+
+<!-- 🎯 AI Course Recommender Section -->
+<div class="ai-section">
+    <h2>🎯 Course Recommender</h2>
+    <p>Tell us what you're passionate about (e.g., coding, fashion design, baking), and our AI will suggest tailored online courses for you!</p>
+    <form method="POST" action="/skill_building" class="ai-form">
+        <textarea name="interest" placeholder="What would you like to learn?" required></textarea>
+        <button type="submit">Get Personalized Courses</button>
+    </form>
+    {% if response %}
+    <div class="ai-response">
+        <h3>🌟 Recommended Courses</h3>
+        <ul class="course-list">
+            {% for line in response.split('\n') if line.strip() %}
+            <li>{{ line }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</div>
+
+<!-- JavaScript for Search Functionality -->
+<script>
+    function searchGoogle() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.google.com/search?q=${query}`, '_blank');
+        }
+    }
+
+    function searchYouTube() {
+        let query = document.getElementById('search-input').value;
+        if (query) {
+            window.open(`https://www.youtube.com/results?search_query=${query}`, '_blank');
+        }
+    }
+</script>
 
 <!-- Skill Development Categories -->
 <div class="info-section">
@@ -33,7 +71,7 @@
             <p>Master graphic design, UX/UI, and creative arts.</p>
         </div>
         <div class="card">
-            <h3><a href="https://www.edx.org/course/soft-skills" target="_blank">Soft Skills</a></h3>
+            <h3><a href="https://www.udemy.com/topic/soft-skills/" target="_blank">Soft Skills</a></h3>
             <p>Improve communication, leadership, and teamwork.</p>
         </div>
         <div class="card">
