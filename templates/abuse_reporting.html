@@ -16,6 +16,28 @@
     <a href="https://www.unwomen.org/en/what-we-do/ending-violence-against-women" target="_blank" class="btn">Learn More</a>
 </div>
 
+<!-- Emergency Call Buttons -->
+<div class="emergency-call-section">
+    <h2>🚨 Emergency Actions</h2>
+    <button class="emergency-btn" onclick="callNumber('100')">Call Police 🚔 (100)</button>
+    <button class="emergency-btn" onclick="callNumber('1091')">Women Helpline 📞 (1091)</button>
+    <button class="emergency-btn" onclick="callNumber('181')">Domestic Abuse ☎️ (181)</button>
+</div>
+
+<!-- AI Assistant Section -->
+<div class="ai-section">
+    <h2>🤖 AI Reporting Assistant</h2>
+    <form method="POST" action="/abuse_reporting" class="ai-form">
+        <textarea name="query" placeholder="Describe the abuse or help you need..." required></textarea>
+        <button type="submit">Ask AI Assistant</button>
+    </form>
+    {% if response %}
+    <div class="ai-response">
+        <strong>Assistant:</strong> {{ response }}
+    </div>
+    {% endif %}
+</div>
+
 <!-- Key Features -->
 <div class="info-section">
     <h2>Report & Seek Assistance</h2>
@@ -94,7 +116,7 @@
     </div>
 </div>
 
-<!-- JavaScript for Search Functionality -->
+<!-- JavaScript -->
 <script>
     function searchGoogle() {
         let query = document.getElementById('search-input').value;
@@ -108,6 +130,10 @@
         if (query) {
             window.open(`https://www.youtube.com/results?search_query=${query}`, '_blank');
         }
+    }
+
+    function callNumber(number) {
+        window.location.href = `tel:${number}`;
     }
 </script>
 
