@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/mentorship.css') }}">
 
 <!-- Search Section -->
 <div class="search-container">
@@ -63,5 +64,35 @@
         }
     }
 </script>
+
+<!-- AI Startup Idea Generator -->
+<div class="business-section">
+    <h2>🤖 AI-Powered Startup Idea Generator</h2>
+    <p>Looking to start your own venture? Get AI-suggested small-scale or home-based business ideas tailored for women.</p>
+    <textarea id="idea-input" rows="3" placeholder="Enter your interests or skills (e.g., fashion, baking, crafts)..."></textarea>
+    <br>
+    <button onclick="generateIdea()">Get Business Ideas</button>
+    <div id="ai-response" class="idea-box"></div>
+</div>
+
+<script>
+    async function generateIdea() {
+        const input = document.getElementById("idea-input").value;
+        const responseBox = document.getElementById("ai-response");
+        responseBox.innerHTML = "Thinking... 🔄";
+
+        const res = await fetch("/generate-idea", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ prompt: input })
+        });
+
+        const data = await res.json();
+        responseBox.innerHTML = `<strong>Here's an idea:</strong><br>${data.idea}`;
+    }
+</script>
+
 
 {% endblock %}
