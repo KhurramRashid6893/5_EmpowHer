@@ -3,14 +3,48 @@
 {% block content %}
 
 <!-- Search Section -->
-<div class="search-container">
-    <input type="text" id="search-input" placeholder="Search for mentorship opportunities...">
+<div class="search-container" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+    <div style="flex: 2;">
+        <input type="text" id="search-input" placeholder="Search for mentorship opportunities..." style="width: 100%; padding: 0.5rem;">
+    </div>
     <button onclick="searchGoogle()">Search Google</button>
     <button onclick="searchYouTube()">Search YouTube</button>
 </div>
 
+<!-- Features Section with Gemini AI -->
+<div class="features-container" style="display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 3rem;">
+    <div style="flex: 1; background-color: #f9f9f9; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <h3>🌟 Mentorship Features</h3>
+        <ul style="padding-left: 1rem;">
+            <li>Connect with experienced mentors for career growth</li>
+            <li>Explore AI-powered mentor suggestions</li>
+            <li>Choose between human mentors or an AI Mentor Assistant</li>
+        </ul>
+
+        <div style="margin-top: 1rem;">
+            <label for="mentor-type">Select Mentor Type:</label>
+            <select id="mentor-type" onchange="handleMentorType()" style="margin-top: 0.5rem; padding: 0.3rem;">
+                <option value="">-- Choose --</option>
+                <option value="human">Human Mentor</option>
+                <option value="ai">AI Mentor Assistant (Gemini)</option>
+            </select>
+        </div>
+
+        <!-- Gemini AI Assistant Input -->
+        <div id="ai-mentor-section" style="margin-top: 1rem; display: none;">
+            <label for="ai-input">Ask the AI Mentor:</label>
+            <textarea id="ai-input" placeholder="e.g., How can I grow in my tech career?" rows="3" style="width: 100%; padding: 0.5rem;"></textarea>
+            <button onclick="askAIMentor()" style="margin-top: 0.5rem;">Get AI Advice</button>
+            <div id="ai-response" style="margin-top: 1rem; white-space: pre-line;"></div>
+        </div>
+
+        <!-- Human mentor message -->
+        <div id="human-mentor-msg" style="margin-top: 1rem;"></div>
+    </div>
+</div>
+
 <!-- Hero Section -->
-<div class="hero-section">
+<div class="hero-section" style="text-align: center; margin-bottom: 3rem;">
     <h1>Mentorship Programs for Women</h1>
     <p>Connect with experienced mentors to accelerate your career and personal growth.</p>
     <a href="https://www.globalmentoring.org/" target="_blank" class="btn">Find a Mentor</a>
@@ -19,7 +53,7 @@
 <!-- Mentorship Categories -->
 <div class="info-section">
     <h2>Types of Mentorship</h2>
-    <div class="card-container">
+    <div class="card-container" style="display: flex; flex-wrap: wrap; gap: 1rem;">
         <div class="card">
             <h3><a href="https://leanin.org/circles" target="_blank">Career Guidance</a></h3>
             <p>Get career advice from industry experts and leaders.</p>
@@ -48,9 +82,9 @@
 </div>
 
 <!-- Additional Mentorship Resources -->
-<div class="mentorship-resources-section">
+<div class="mentorship-resources-section" style="margin-top: 3rem;">
     <h2>Important Mentorship Resources</h2>
-    <div class="card-container">
+    <div class="card-container" style="display: flex; flex-wrap: wrap; gap: 1rem;">
         <div class="card">
             <h3><a href="https://mentoringher.com/" target="_blank">MentoringHer</a></h3>
             <p>Global mentorship platform for professional women.</p>
@@ -70,7 +104,7 @@
     </div>
 </div>
 
-<!-- JavaScript for Search Functionality -->
+<!-- JavaScript -->
 <script>
     function searchGoogle() {
         let query = document.getElementById('search-input').value;
@@ -83,6 +117,49 @@
         let query = document.getElementById('search-input').value;
         if (query) {
             window.open(`https://www.youtube.com/results?search_query=${query}`, '_blank');
+        }
+    }
+
+    function handleMentorType() {
+        const type = document.getElementById("mentor-type").value;
+        const aiSection = document.getElementById("ai-mentor-section");
+        const humanMsg = document.getElementById("human-mentor-msg");
+
+        if (type === "human") {
+            aiSection.style.display = "none";
+            humanMsg.innerHTML = "<p>🔗 Human mentor options will be available soon from our database. Stay tuned!</p>";
+        } else if (type === "ai") {
+            aiSection.style.display = "block";
+            humanMsg.innerHTML = "";
+        } else {
+            aiSection.style.display = "none";
+            humanMsg.innerHTML = "";
+        }
+    }
+
+    async function askAIMentor() {
+        const userInput = document.getElementById("ai-input").value.trim();
+        const responseDiv = document.getElementById("ai-response");
+
+        if (!userInput) {
+            responseDiv.innerHTML = "❗ Please enter a question for the AI mentor.";
+            return;
+        }
+
+        responseDiv.innerHTML = "🧠 Thinking...";
+
+        try {
+            const res = await fetch("/ai_mentor", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ prompt: userInput })
+            });
+
+            const data = await res.json();
+            responseDiv.innerHTML = data.response || "⚠️ No response from AI.";
+        } catch (error) {
+            responseDiv.innerHTML = "❌ Error reaching AI mentor.";
+            console.error(error);
         }
     }
 </script>
