@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<link rel="stylesheet" href="{{ url_for('static', filename='css/leadership.css') }}">
 <!-- Search Section -->
 <div class="search-container">
     <input type="text" id="search-input" placeholder="Search for women leadership topics...">
@@ -47,7 +47,38 @@
     </div>
 </div>
 
-<!-- JavaScript for Search Functionality -->
+<!-- Confidence Booster Coach -->
+<div class="info-section">
+    <h2>Confidence Booster Coach (AI)</h2>
+    <p>Feeling stuck or need a push? Ask our AI Coach for leadership tips or confidence boosters!</p>
+    <div class="search-container" style="flex-direction: column; align-items: center;">
+        <textarea id="ai-input" rows="3" placeholder="Ask the AI for confidence advice, leadership challenges, etc..." style="width: 80%; padding: 10px; border: 2px solid #ff4081; border-radius: 5px;"></textarea>
+        <button onclick="askConfidenceCoach()" style="margin-top: 10px;">Ask Coach</button>
+        <div id="ai-response" style="white-space: pre-line; margin-top: 15px; background: #fdf2f8; padding: 15px; border-radius: 8px; max-width: 80%;"></div>
+    </div>
+</div>
+
+<!-- Motivational YouTube Section -->
+<div class="info-section">
+    <h2>Motivational Leadership Videos</h2>
+    <div class="video-carousel-wrapper">
+        <div class="video-carousel">
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/Zr_s8b4Knl0" frameborder="0" allowfullscreen></iframe><p>Powerful Talk</p></div>
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/Lp7E973zozc" frameborder="0" allowfullscreen></iframe><p>Confidence Boost</p></div>
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/nk1b29ZhK_w" frameborder="0" allowfullscreen></iframe><p>Be a Great Leader</p></div>
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/3APkV3yZy7g" frameborder="0" allowfullscreen></iframe><p>Leadership Habits</p></div>
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/XjJQBjWYDTs" frameborder="0" allowfullscreen></iframe><p>Overcome Fear</p></div>
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/NKnRmYzFH5Y" frameborder="0" allowfullscreen></iframe><p>Build Self-Worth</p></div>
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/NUWFrM1Y7Vw" frameborder="0" allowfullscreen></iframe><p>Master Your Mind</p></div>
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/f6cL9HKmMk0" frameborder="0" allowfullscreen></iframe><p>Self-Motivation</p></div>
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/GfL_B-KaYa4" frameborder="0" allowfullscreen></iframe><p>Women in Power</p></div>
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/vVuDcozUUb4" frameborder="0" allowfullscreen></iframe><p>Be Fearless</p></div>
+        </div>
+    </div>
+</div>
+
+
+<!-- JavaScript -->
 <script>
     function searchGoogle() {
         let query = document.getElementById('search-input').value;
@@ -61,6 +92,27 @@
         if (query) {
             window.open(`https://www.youtube.com/results?search_query=${query}`, '_blank');
         }
+    }
+
+    function askConfidenceCoach() {
+        const userInput = document.getElementById("ai-input").value;
+        const responseDiv = document.getElementById("ai-response");
+        responseDiv.innerText = "Thinking...";
+
+        fetch("/ai_mentor", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ prompt: userInput })
+        })
+        .then(res => res.json())
+        .then(data => {
+            responseDiv.innerText = data.response;
+        })
+        .catch(() => {
+            responseDiv.innerText = "Sorry, something went wrong.";
+        });
     }
 </script>
 
