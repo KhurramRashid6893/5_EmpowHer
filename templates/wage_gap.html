@@ -20,34 +20,59 @@
 <div class="info-section">
     <h2>Wage Gap Insights</h2>
     <div class="card-container">
-        <div class="card">
-            <h3><a href="https://www.epi.org/publication/what-is-the-gender-pay-gap-and-is-it-real/" target="_blank">What is the Wage Gap?</a></h3>
-            <p>Understand why wage disparities exist between men and women.</p>
-        </div>
-        <div class="card">
-            <h3><a href="https://www.weforum.org/reports/global-gender-gap-report-2023" target="_blank">Global Wage Reports</a></h3>
-            <p>Explore the latest reports on gender-based salary gaps.</p>
-        </div>
-        <div class="card">
-            <h3><a href="https://www.payscale.com/gender-pay-gap" target="_blank">Wage Gap by Industry</a></h3>
-            <p>Find salary comparisons across different job sectors.</p>
-        </div>
-        <div class="card">
-            <h3><a href="https://www.unwomen.org/en/news/stories/2022/3/explainer-what-you-should-know-about-the-gender-pay-gap" target="_blank">Legal Protections</a></h3>
-            <p>Learn about laws protecting women from salary discrimination.</p>
-        </div>
-        <div class="card">
-            <h3><a href="https://www.aauw.org/resources/research/simple-truth/" target="_blank">Salary Negotiation Tips</a></h3>
-            <p>Gain confidence in negotiating fair pay.</p>
-        </div>
-        <div class="card">
-            <h3><a href="https://gender-pay-gap.service.gov.uk/" target="_blank">Country-wise Salary Data</a></h3>
-            <p>Check wage gap statistics for your country.</p>
-        </div>
+        <!-- Cards with wage gap info -->
+        <div class="card"><h3><a href="https://www.epi.org/publication/what-is-the-gender-pay-gap-and-is-it-real/" target="_blank">What is the Wage Gap?</a></h3><p>Understand why wage disparities exist between men and women.</p></div>
+        <div class="card"><h3><a href="https://www.weforum.org/reports/global-gender-gap-report-2023" target="_blank">Global Wage Reports</a></h3><p>Explore the latest reports on gender-based salary gaps.</p></div>
+        <div class="card"><h3><a href="https://www.payscale.com/gender-pay-gap" target="_blank">Wage Gap by Industry</a></h3><p>Find salary comparisons across different job sectors.</p></div>
+        <div class="card"><h3><a href="https://www.unwomen.org/en/news/stories/2022/3/explainer-what-you-should-know-about-the-gender-pay-gap" target="_blank">Legal Protections</a></h3><p>Learn about laws protecting women from salary discrimination.</p></div>
+        <div class="card"><h3><a href="https://www.aauw.org/resources/research/simple-truth/" target="_blank">Salary Negotiation Tips</a></h3><p>Gain confidence in negotiating fair pay.</p></div>
+        <div class="card"><h3><a href="https://gender-pay-gap.service.gov.uk/" target="_blank">Country-wise Salary Data</a></h3><p>Check wage gap statistics for your country.</p></div>
     </div>
 </div>
 
-<!-- JavaScript for Search Functionality -->
+<!-- 📊 AI-Powered Industry Wage Gap Analysis -->
+<div class="info-section">
+    <h2>📊 Salary Comparison by Industry (AI-Powered)</h2>
+    <p>Choose an industry to get AI-generated insights on the gender wage gap in that field.</p>
+    
+    <select id="industry-select" style="padding: 10px; border: 2px solid #ff69b4; border-radius: 5px;">
+        <option value="">-- Select Industry --</option>
+        <option value="Technology">Technology</option>
+        <option value="Healthcare">Healthcare</option>
+        <option value="Education">Education</option>
+        <option value="Finance">Finance</option>
+        <option value="Media and Entertainment">Media and Entertainment</option>
+        <option value="Engineering">Engineering</option>
+        <option value="Retail">Retail</option>
+        <option value="Legal">Legal</option>
+        <option value="Public Sector">Public Sector</option>
+    </select>
+    <button onclick="generateIndustryInsight()" style="margin-left: 10px;">Generate Insight</button>
+    
+    <div id="industry-insight-result" style="margin-top: 20px; background: #fff0f5; padding: 15px; border-radius: 8px; white-space: pre-line;"></div>
+</div>
+
+<!-- 💼 AI-Powered Salary Negotiation Tips -->
+<div class="info-section">
+    <h2>💼 Personalized Salary Negotiation Tips (AI)</h2>
+    <p>Enter your role and experience level to get negotiation advice tailored for your situation.</p>
+    
+    <input type="text" id="job-role" placeholder="e.g. Software Engineer" style="padding: 10px; margin: 5px 0; border: 2px solid #ff69b4; border-radius: 5px; width: 300px;">
+    
+    <select id="experience-level" style="padding: 10px; margin: 5px 10px; border: 2px solid #ff69b4; border-radius: 5px;">
+        <option value="">Experience Level</option>
+        <option value="Entry-level">Entry-level</option>
+        <option value="Mid-level">Mid-level</option>
+        <option value="Senior-level">Senior-level</option>
+        <option value="Executive">Executive</option>
+    </select>
+
+    <button onclick="generateNegotiationTips()">Get Tips</button>
+
+    <div id="negotiation-tips-result" style="margin-top: 20px; background: #fff0f5; padding: 15px; border-radius: 8px; white-space: pre-line;"></div>
+</div>
+
+<!-- JavaScript Section -->
 <script>
     function searchGoogle() {
         let query = document.getElementById('search-input').value;
@@ -61,6 +86,65 @@
         if (query) {
             window.open(`https://www.youtube.com/results?search_query=${query}`, '_blank');
         }
+    }
+
+    function generateIndustryInsight() {
+        const industry = document.getElementById("industry-select").value;
+        const resultDiv = document.getElementById("industry-insight-result");
+
+        if (!industry) {
+            resultDiv.innerText = "Please select an industry to continue.";
+            return;
+        }
+
+        resultDiv.innerText = "Analyzing industry trends...";
+
+        const prompt = `Generate a brief AI-based insight on the gender wage gap in the ${industry} industry. Include causes, current trends, and actions being taken.`;
+
+        fetch("/ai_mentor", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ prompt: prompt })
+        })
+        .then(res => res.json())
+        .then(data => {
+            resultDiv.innerText = data.response;
+        })
+        .catch(() => {
+            resultDiv.innerText = "Oops! Something went wrong.";
+        });
+    }
+
+    function generateNegotiationTips() {
+        const role = document.getElementById("job-role").value;
+        const level = document.getElementById("experience-level").value;
+        const resultDiv = document.getElementById("negotiation-tips-result");
+
+        if (!role || !level) {
+            resultDiv.innerText = "Please provide both role and experience level.";
+            return;
+        }
+
+        resultDiv.innerText = "Fetching personalized negotiation tips...";
+
+        const prompt = `Provide salary negotiation advice for a ${level} ${role}. Focus on tips that can help address gender-based wage gaps.`;
+
+        fetch("/ai_mentor", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ prompt: prompt })
+        })
+        .then(res => res.json())
+        .then(data => {
+            resultDiv.innerText = data.response;
+        })
+        .catch(() => {
+            resultDiv.innerText = "Sorry, could not generate tips at the moment.";
+        });
     }
 </script>
 
