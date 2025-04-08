@@ -63,9 +63,29 @@ def ai_mentor():
 def home():
     return render_template('index.html')
 
-@app.route('/skill_building')
+# @app.route('/skill_building')
+# def skill_building():
+#     return render_template('skill_building.html')
+
+
+@app.route('/skill_building', methods=['GET', 'POST'])
 def skill_building():
-    return render_template('skill_building.html')
+    response = None
+    if request.method == 'POST':
+        interest = request.form.get("interest", "")
+        if interest:
+            prompt = f"""
+You are a course recommendation assistant for women's empowerment. A user is interested in "{interest}".
+Suggest 5 to 10 beginner-friendly online courses or platforms that are easy to start and accessible.
+Format your response as a numbered list with course title and platform.
+Only include relevant, readable suggestions without explanations or URLs.
+"""
+            try:
+                result = model.generate_content(prompt)
+                response = result.text
+            except Exception as e:
+                response = "Sorry, there was an error while fetching suggestions."
+    return render_template("skill_building.html", response=response)
 
 @app.route('/abuse_reporting')
 def abuse_reporting():
