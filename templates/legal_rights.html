@@ -16,6 +16,20 @@
     <a href="https://www.unwomen.org/en/what-we-do/leadership-and-political-participation/laws-and-policies" target="_blank" class="btn">Explore Women’s Laws</a>
 </div>
 
+<!-- 🔍 Legal Right Advisor Section -->
+<div class="legal-advisor-section">
+    <h2>Legal Right Advisor (Ask Your Question)</h2>
+    <p>Type in a real-life situation or a question to learn what rights protect you.</p>
+    
+    <div class="legal-advisor-form">
+        <textarea id="legal-question" placeholder="E.g., What should I do if I'm being harassed at work?"></textarea>
+        <br>
+        <button onclick="askLegalAdvisor()">Get Legal Advice</button>
+    </div>
+    
+    <div id="advisor-response" class="advisor-response" style="display: none;"></div>
+</div>
+
 <!-- Legal Rights Categories -->
 <div class="info-section">
     <h2>Important Legal Protections</h2>
@@ -78,20 +92,59 @@
     </div>
 </div>
 
-<!-- JavaScript for Search Functionality -->
+<!-- JavaScript for Google and YouTube Search -->
 <script>
     function searchGoogle() {
-        let query = document.getElementById('search-input').value;
+        const query = document.getElementById('search-input').value;
         if (query) {
-            window.open(`https://www.google.com/search?q=${query}`, '_blank');
+            window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
         }
     }
 
     function searchYouTube() {
-        let query = document.getElementById('search-input').value;
+        const query = document.getElementById('search-input').value;
         if (query) {
-            window.open(`https://www.youtube.com/results?search_query=${query}`, '_blank');
+            window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`, '_blank');
         }
+    }
+
+    function askLegalAdvisor() {
+        const question = document.getElementById('legal-question').value;
+        const responseDiv = document.getElementById('advisor-response');
+
+        if (!question.trim()) {
+            responseDiv.innerHTML = "Please enter a question about your rights.";
+            responseDiv.style.display = "block";
+            return;
+        }
+
+        responseDiv.innerHTML = "Thinking... Please wait.";
+        responseDiv.style.display = "block";
+
+        fetch("/ai_assistant", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ prompt: question })
+        })
+        .then(res => res.json())
+        .then(data => {
+            let text = data.response.trim();
+
+            // Format into bullet points
+            let lines = text.split('\n').filter(line => line.trim() !== "");
+            let html = "<ul>";
+            lines.forEach(line => {
+                html += `<li>${line.replace(/^\d+\.\s*/, '')}</li>`;
+            });
+            html += "</ul>";
+
+            responseDiv.innerHTML = html;
+        })
+        .catch(() => {
+            responseDiv.innerHTML = "Sorry, something went wrong.";
+        });
     }
 </script>
 
