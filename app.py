@@ -7,7 +7,9 @@ app = Flask(__name__)
 genai.configure(api_key="AIzaSyDS1336LlHoyxTfvkJCgRRl4cpO34jtfl4")
 model = genai.GenerativeModel("gemini-2.0-flash")
 
-# AI Assistant Route for Abuse Reporting
+# ------------------------- AI ROUTES -------------------------
+
+# AI Assistant Route (used for abuse reporting and legal right advisor)
 @app.route('/ai_assistant', methods=['POST'])
 def ai_assistant():
     data = request.get_json()
@@ -23,7 +25,7 @@ def ai_assistant():
     except Exception as e:
         return jsonify({"response": f"Error: {str(e)}"})
 
-# Existing AI route for startup idea generator
+# AI-based Startup Idea Generator
 @app.route('/generate-idea', methods=['POST'])
 def generate_idea():
     data = request.get_json()
@@ -37,6 +39,7 @@ def generate_idea():
     except Exception as e:
         return jsonify({"idea": "Sorry, I couldn't generate an idea at the moment. Please try again later."})
 
+# AI Mentor Route
 @app.route('/ai_mentor', methods=['POST'])
 def ai_mentor():
     data = request.get_json()
@@ -58,15 +61,12 @@ def ai_mentor():
     except Exception as e:
         return jsonify({"response": f"Error: {str(e)}"})
 
-# Page Routes
+
+# ------------------------- PAGE ROUTES -------------------------
+
 @app.route('/')
 def home():
     return render_template('index.html')
-
-# @app.route('/skill_building')
-# def skill_building():
-#     return render_template('skill_building.html')
-
 
 @app.route('/skill_building', methods=['GET', 'POST'])
 def skill_building():
@@ -123,10 +123,8 @@ def wellness():
 def businesses():
     return render_template('businesses.html')
 
-# if __name__ == '__main__':
-#     #app.run(debug=True)
-#     app.run(host = "0,0,0,0", port = 5000)
-    
+
+# ------------------------- MAIN -------------------------
+
 if __name__ == '__main__':
-    #init_db()
     app.run(host='0.0.0.0', port=5000)
