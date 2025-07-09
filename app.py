@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 # Configure Gemini API
 genai.configure(api_key="AIzaSyDS1336LlHoyxTfvkJCgRRl4cpO34jtfl4")
-model = genai.GenerativeModel("gemini-2.0-flash")
+model = genai.GenerativeModel("gemini-2.0-flash") 
 
 # ------------------------- AI ROUTES -------------------------
 
